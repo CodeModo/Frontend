@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row m-3 p-3 justify-content-center align-content-center">
+        <div class="col col-6 align-content-center justify-content-center">
+            <div *ngFor='let instructor of instructorList; let i = index' class='text-center'>
+                <div *ngIf='i < instructorList.length / 2' class='instructorCard' [routerLink]="['/instructor', instructor._id]">
+                    <i class='fas fa-chalkboard-teacher'
+                        style="text-shadow: none; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); border-radius: 40%;"></i>
+                    <div>
+                        {{instructor.name}}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col col-6 align-content-center justify-content-center">
+            <div *ngFor='let instructor of instructorList; let i = index' class='text-center'>
+                <div *ngIf='i > instructorList.length / 2' class='instructorCard'>
+                    <i class='fas fa-chalkboard-teacher'
+                        style="text-shadow: none; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); border-radius: 40%;"></i>
+                    <div>
+                        {{instructor.name}}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

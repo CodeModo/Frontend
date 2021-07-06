@@ -1,0 +1,100 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top  justify-content-between"
+        style="padding: 0% !important; border-bottom: 1px solid gold; ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img class="navbar-brand icon" src="../../../assets/images/preview-removebg-preview.ico">
+                <span class="navbar-brand Active"
+                    style="color:gold; padding: 0% !important; font-size: 2vh; font-weight: bold;">CodeModo</span>
+            </a>
+            <button style="background-color: gold;" (click)='toggleNavbar()' class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div [ngClass]="{'show':navBarOpen}" class="collapse navbar-collapse w-50  justify-content-end"
+                id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item ml-3 itemhover">
+                        <a class="nav-link navItemFont" routerLinkActive="text-dark" routerLink="#">Home</a>
+                    </li>
+                    <li class="nav-item ml-3 itemhover">
+                        <a class="nav-link navItemFont" routerLinkActive="text-dark" routerLink="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container emp-profile">
+        <form>
+            <div class="row p-5 mt-2" style="border: 2px solid gold ;">
+                <div class="col-md-4">
+                    <div class="profile-head d-flex flex-column justify-content-center align-content-center">
+                        <img class="myimg"
+                            src='../../../assets/images/6e4b2e5e016ee15a405be4e09decfdc9-removebg-preview.png' alt="" />
+                        <ul class="nav nav-tabs mt-5 mb-3 justify-content-center align-items-center" id="myTab"
+                            role="tablist">
+                            <li class="nav-item">
+                                <a style="color: black;" class="nav-link active" id="home-tab" data-toggle="tab"
+                                    role="tab" aria-controls="home" aria-selected="true">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="color: black;" class="nav-link" id="home-tab" data-toggle="tab" 
+                                    role="tab" aria-controls="home" aria-selected="true">Classrooms</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-8 mt-3 justify-content-center align-items-center">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="d-flex flex-column fade show active justify-content-center align-items-center"
+                            id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row w-50 flex-column align-items-start">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <i class="fas fa-user profile-icon"></i>
+                                    <span> {{this.instructor.name}}</span>
+                                </div>
+                                <div class="liner"></div>
+                            </div>
+                            <div class="row w-50 flex-column align-items-start">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <i class="fas fa-envelope profile-icon"></i>
+                                    <span> {{this.instructor.email}}</span>
+                                </div>
+                                <div class="liner"></div>
+                            </div>
+                            <div class="row w-50 flex-column align-items-start">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <i class="fas fa-mobile-alt profile-icon" style="margin-right: 1.5rem;"></i>
+                                    <span> {{this.instructor.phone}}</span>
+                                </div>
+                                <div class="liner"></div>
+                            </div>
+                            <div class="row w-50 flex-column align-items-start">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <i class="fas fa-star profile-icon"></i>
+                                    <span> {{this.instructor.specialization}}</span>
+                                </div>
+                                <div class="liner"></div>
+                            </div>
+                            <div class="row w-50 flex-column just align-items-start">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <i class="fas fa-trophy profile-icon"></i>
+                                    <span *ngFor='let x of this.instructor.achievements'>
+                                        {{x}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

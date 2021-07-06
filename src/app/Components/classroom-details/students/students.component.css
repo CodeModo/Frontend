@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900i&display=swap');
+
+.studentCard{
+    background:gold;
+	font-family: 'Montserrat', sans-serif;
+    font-size: 2vw;
+    letter-spacing: 0.2em;
+    line-height: 1.8rem;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 0.1rem;
+    text-shadow: 0.2rem 0.15rem  aqua;
+    padding : 1.25rem;
+    border-radius: 1.25rem;
+    margin: 1.25rem;
+    cursor: pointer;
+    color:black;
+    font-weight: 100;
+    box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.5);
+   text-align: center;
+   box-sizing: border-box;
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+}

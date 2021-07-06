@@ -1,0 +1,39 @@
+<div class="container-fluid ">
+  <nav *ngIf='classroom != null'
+    class="navbar navbar-expand-lg navbar-light bg-white sticky-top  justify-content-between"
+    style="padding: 0% !important; border-bottom: 1px solid gold; ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img class="navbar-brand icon" src="../../../assets/images/preview-removebg-preview.ico">
+        <span class="navbar-brand Active" style="color:gold; padding: 0% !important; font-size: 4vh; font-weight: bold;">{{classroom.name}}</span>
+      </a>
+      <button style="background-color: gold;" (click)='toggleNavbar()' class="navbar-toggler" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div [ngClass]="{'show' : navBarOpen}" class="collapse navbar-collapse w-50  justify-content-end"
+        id="navbarSupportedContent">
+        <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item ml-3 itemhover">
+            <a class="nav-link navItemFont" [routerLinkActiveOptions]='{exact:true}' routerLinkActive="text-dark"
+              [routerLink]="['/classroom', classroomId, 'sessionList']">Sessions</a>
+          </li>
+          <li class="nav-item ml-3 itemhover">
+            <a class="nav-link navItemFont" routerLinkActive="text-dark"
+              [routerLink]="['/classroom', classroomId, 'description']">Description</a>
+          </li>
+          <li class="nav-item ml-3 itemhover">
+            <a class="nav-link navItemFont" routerLinkActive="text-dark" routerLink="/logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

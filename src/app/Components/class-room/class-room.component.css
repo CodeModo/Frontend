@@ -1,0 +1,15 @@
+.navItemFont{
+  font-family: ibm-plex-sans,"Helvetica Neue",Arial,sans-serif;
+}
+
+.itemhover:hover{
+  background-color: gold;
+  border-radius: 0.5rem;
+  padding: 0.1rem;
+}
+
+.icon{
+  width: 6rem; 
+  height: 5.5rem;
+  /* margin-top: 0.5rem; */
+}

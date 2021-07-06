@@ -1,0 +1,55 @@
+.instructorIndicator:hover{
+  color: blue;
+}
+
+
+/*
+div.card div.card-title{
+  /* time & title style 
+  background-color: rgb(228, 228, 135);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+div.card div.card-title h5{
+  /* title style 
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+div.card div.card-title div#time{
+  /* time style 
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+div.container-flow{
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+div.card div {
+  color: yellow;
+}
+span.label{
+  color:black;
+}
+div.card div span.data{
+  color: red;
+}
+div.card div#meetlink{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+div.card div#comments{
+  background-color: rgb(228, 228, 135);
+}
+div.card div#comments span{
+  margin-top: 10px;
+  margin-left: 15px;
+  text-decoration: none;
+}
+/* div.card div#comments div{
+  margin-left: 15px;
+  text-decoration: none;
+} */

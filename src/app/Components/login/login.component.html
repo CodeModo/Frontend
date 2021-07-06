@@ -1,0 +1,33 @@
+
+<div class="row justify-content-center align-items-sm-start text-center">
+    <div class="col-8 mx-3">
+        <span class="text-danger">{{loginError}}</span>
+        <div class="form-group m-3">
+            <input type="text" class="form-control" id="email"  [(ngModel)]="email" required placeholder="Username">
+            <span class="text-danger">{{emailError}}</span>
+        </div>
+        <div class="form-group m-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <input type="password" class="form-control" [(ngModel)]="password" required placeholder="Password" id="password">
+            </div>
+            <span class="text-danger">{{passwordError}}</span>
+        </div>
+        <div class="form-group m-3 d-flex justify-content-around align-items-center">
+            <div class="form-check form-check-inline">
+                <input style="color: gold;" class="form-check-input" [(ngModel)]="userType" type="radio" name="userType" id="student" value="student" required>
+                <label class="form-check-label" for="student">Student</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input text-warning" [(ngModel)]="userType" type="radio" name="userType" id="parent" value="parent">
+                <label class="form-check-label" for="parent">Parent</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" [(ngModel)]="userType" type="radio" name="userType" id="instructor" value="instructor" >
+                <label class="form-check-label" for="instructor">Instructor</label>
+            </div>
+        </div>
+        <div class="form-group mb-2">
+            <input data-dismiss="modal" type="button" class="btn login-btn" [disabled]="!email || !password || !userType" value="Login" (click)="login($event)">
+        </div>
+    </div>
+</div>

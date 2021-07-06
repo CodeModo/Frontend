@@ -1,0 +1,24 @@
+.login-btn{
+    background-color: gold;
+    font-size: 18px;
+    font-weight: 600;
+}
+.login-btn:disabled{
+    background-color: rgb(190, 190, 190);
+}
+
+
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: gold;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}

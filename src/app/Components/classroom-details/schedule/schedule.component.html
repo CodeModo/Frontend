@@ -1,0 +1,20 @@
+<div class="container text-center m-5">
+    <table class="table table-borderless">
+        <thead>
+          <tr>
+            <th style="background-color: gold; font-size: 5vh;" scope="col">Subject</th>
+            <th style="background-color: gold; font-size: 5vh;" scope="col">Date</th>
+            <th style="background-color: gold; font-size: 5vh;" scope="col">Time</th>
+            <th style="background-color: gold; font-size: 5vh;" scope="col">Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let subject of scheduleList'>
+            <td>{{subject.subject}}</td>
+            <td>{{subject.date | date: 'dd-MM-yyyy'}}</td>
+            <td>{{subject.time}}</td>
+            <td>{{subject.meetingLink}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

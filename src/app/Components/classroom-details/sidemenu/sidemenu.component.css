@@ -1,0 +1,66 @@
+.sidemenu{
+    position: fixed;
+    left: 0;
+    top: 6.1rem;
+    width: fit-content;
+    height: 100%;
+    background-color: gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+
+.tooltips {
+    position: absolute;
+    height: 35px;
+    width: 122px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    left: 4rem;
+    top : 50%;
+    transform: translateY(-50%);
+    line-height: 35px;
+    text-align: center;
+    border-radius: 30px;
+    color: black;
+    font-weight: bold;
+    display: none;
+    z-index: 999999;
+}
+
+li:hover .tooltips{
+    display: inline;
+    z-index: 99999;
+}
+
+li{
+    list-style-type: none;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    width: fit-content;
+    margin-top: 2rem;
+}
+
+li:hover{
+    background-color: #fff;
+    border-radius: 2rem;
+    width: fit-content;
+    padding: 1rem;
+}
+
+i{
+    font-size: 3rem;
+}
+
+.nav-link{
+    /* margin-top: 0.8rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}

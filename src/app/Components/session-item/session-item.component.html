@@ -1,0 +1,108 @@
+<!-- <div class="container-flow">
+  <div class="row">
+      <div class="card col-12 col-lg-12">
+          <div class="card-title">
+              <h5>{{session.title}}</h5>
+              <div id="time">
+                  <span class="label">Time:</span>
+                  <span class="data">gggg</span>
+              </div>
+          </div>
+          <div>
+              <span class="label">Desc : </span>
+              <span class="data">{{session.description}}</span>
+          </div>
+          <div class="text-center" id="meetlink">
+              <a [href]="session.meetingUrl" target="_blank" class="btn btn-primary">Join Meeting</a>
+          </div>
+          <div id="comments">
+              <span>+10 replies</span>
+              <div>
+                  <span (click)="comm()">replay</span>
+              </div>
+          </div>
+      </div> 
+
+
+</div>
+</div> 
+ <div class="container-flow">
+  <div class="row">
+      <div class="card col-12 col-lg-12">
+          <div class="card-title">
+              <h5>Sesstion Title</h5>
+              <div id="time">
+                  <span class="label">Time:</span>
+                  <span class="data">HIII</span>
+              </div>
+          </div>
+          <div>
+              <span class="label">Desc:</span>
+              <span class="data">HIII</span>
+          </div>
+          <div class="text-center" id="meetlink">
+              <a href="#" class="btn btn-primary">Join Meeting</a>
+          </div>
+          <div id="comments">
+              <a href="#">+10 replies</a>
+          </div>
+      </div>
+  </div>
+</div> -->
+
+<div *ngIf='instructor != null' class="card text-left m-5" style="border-color: gold;">
+    <div class="card-header bg-transparent d-flex justify-content-between align-items-center"
+        style="border-color: gold;">
+        <div>
+            <h4>{{session.title}}</h4>
+            <span style="font-size: 2vh;">Created by: </span>
+            <span class='instructorIndicator' [routerLink]="['/instructor', instructor._id]"
+                style="cursor: pointer; font-size: 2.5vh; font-weight: bold;">
+                {{instructor.name}}
+            </span>
+        </div>
+        <a [href]="session.meetingLink" class="btn" style="background-color: gold;">Join now</a>
+    </div>
+    <div class="card-body">
+        <p class="card-text">{{session.description}}</p>
+        <div>
+            <span style="font-size: 2vh;">Assignment: </span>
+            <span *ngIf='session.assignmentDescription != null; else noAssign'
+                style="font-size: 2vh; font-weight: bold;">
+                {{session.assignmentDescription}}
+            </span>
+            <ng-template #noAssign>No assignment for today.</ng-template>
+        </div>
+        <div class="row justify-content-between align-items-center">
+            <div class='col-md-6 mt-3'>
+                <span>Comments : </span>
+                <span (click)='commentToggle()' *ngIf='session.comments.length > 0; else noComments' style='cursor: pointer; color:black; padding: 0.5rem; background-color: gold; border-radius: 50%; font-size: 3vh; font-weight: bold;'>
+                    +{{session.comments.length}}
+                </span>
+                <ng-template #noComments>No comments</ng-template>
+            </div>
+            <div class='col-md-6 d-flex justify-content-end align-items-center '>
+                <input class='form-control m-3 w-50' placeholder="comment" type="text" style="border-radius: 1rem;">
+                <div class="btn" style="background-color: gold; border-radius: 1rem;">Post</div>
+            </div>
+        </div>
+        <div *ngIf='commentsClicked'>
+            <div *ngFor='let comment of session.comments; let i = index' class="mt-4">
+                <div>
+                    <div class='d-flex justify-content-start align-items-center'>
+                        <div class="d-flex justify-content-center align-items-center" style="background-color: gold; margin-right: 0.3rem; font-size: 3vh; padding: 0.3rem; border-radius: 50%; width: 1.5rem; height: 1.5rem; font-weight: bold;">
+                            {{commentersName[i][0].toUpperCase()}}
+                        </div>
+                        <div style="font-size: 2vh; font-weight: bold;">
+                            {{commentersName[i]}}
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        {{comment.comment}}
+                    </div>
+                </div>
+                <div *ngIf='i != session.comments.length - 1' style="border: 1px solid gold; margin-top: 0.2rem;"></div>
+            </div>
+        </div>
+    </div>
+</div>

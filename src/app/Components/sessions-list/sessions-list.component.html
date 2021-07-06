@@ -1,0 +1,20 @@
+<section class=" container-fluid">
+  <div *ngIf='this.sessionService.sessionList.length > 0' class="row p-4 bg-white flex-column justify-content-center align-items-center">
+    <div data-toggle="modal" data-target="#exampleModal2" class="btn align-self-end mb-4" style="box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);background-color: gold; font-size: 4vh; font-weight: bold; border-radius: 50%;">+</div>
+    <div *ngFor="let session of this.sessionService.sessionList" class="bg-white col-md-11 text-center box-shadow-full" >
+      <app-session-item [session]="session" class="bg-white"></app-session-item>
+    </div>
+  </div>
+</section>
+
+<!-- Login modal-->
+<!-- Modal -->
+<div  class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div  class="modal-dialog modal-dialog-centered" role="document">
+    <div style="background-color: rgba(255, 255, 255, 0.5) !important;" class="modal-content">
+      <div class="modal-body" >
+        <app-session-form></app-session-form>
+      </div>
+    </div>
+  </div>
+</div>

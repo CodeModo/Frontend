@@ -1,0 +1,20 @@
+<div class="sidemenu">
+    <ul class="nav-link">
+        <li>
+            <i [routerLink]="['/classroom', classroomId, 'description', 'details']" class='bx bx-detail'></i>
+            <span class="tooltips" >Details</span>
+        </li>
+        <li>
+            <i [routerLink]="['/classroom', classroomId, 'description', 'schedule']" class='bx bx-calendar'></i>
+            <span class="tooltips">Schedule</span>
+        </li>
+        <li>
+            <i [routerLink]="['/classroom', classroomId, 'description', 'instructors']" class='fas fa-chalkboard-teacher' style="font-size: 2rem; padding: 0.5rem;"></i>
+            <span class="tooltips">Instructors</span>
+        </li>
+        <li>
+            <i [routerLink]="['/classroom', classroomId, 'description', 'students']" class='bx bxs-group'></i>
+            <span class="tooltips">Students</span>
+        </li>
+    </ul>
+</div>
